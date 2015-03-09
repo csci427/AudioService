@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Current Status:"
+        android:id="@+id/txtStatusLabel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/txtStatus"
+        android:enabled="true"
+        android:text="Status Here"
+        android:focusable="false"
+        android:layout_below="@+id/txtStatusLabel"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:id="@+id/btnStart"
+        android:layout_below="@+id/txtStatus"
+        android:layout_marginTop="43dp"
+        android:layout_alignEnd="@+id/txtStatusLabel"
+        android:layout_alignStart="@+id/txtStatusLabel" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End"
+        android:id="@+id/btnEnd"
+        android:layout_below="@+id/btnStart"
+        android:layout_alignStart="@+id/btnStart"
+        android:layout_alignEnd="@+id/btnStart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Mic Status:"
+        android:id="@+id/txtMic"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/txtMicStatus"
+        android:layout_below="@+id/txtMic"
+        android:layout_centerHorizontal="true"
+        android:text="Status Here" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTest"
+        android:layout_below="@+id/txtMicStatus"
+        android:text="Test Mic"
+        android:layout_alignEnd="@+id/btnEnd"
+        android:layout_alignStart="@+id/btnEnd" />
+</RelativeLayout>
