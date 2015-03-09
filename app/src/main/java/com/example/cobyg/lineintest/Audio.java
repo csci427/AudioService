@@ -19,7 +19,7 @@ public class Audio extends Thread
     private AudioTrack track = null;
     private short[] buffer = new short[160];
 
-    //Give the thread high priority and start it.
+    //Give the thread high priority and start it
     public Audio()
     {
         android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO);
