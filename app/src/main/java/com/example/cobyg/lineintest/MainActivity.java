@@ -1,6 +1,7 @@
 package com.example.cobyg.lineintest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -16,25 +17,23 @@ public class MainActivity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Audio audioObj = new Audio();
         final AudioManager am= (AudioManager) getBaseContext().getSystemService(Context.AUDIO_SERVICE);
         final TextView statusLabel = (TextView) findViewById(R.id.txtStatus);
         final TextView micStatusLabel = (TextView) findViewById(R.id.txtMicStatus);
-        statusLabel.setText(audioObj.getStatus());
+        final Intent i = new Intent(this, LineService.class);
 
         final Button startButton = (Button) findViewById(R.id.btnStart);
         startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                audioObj.open();
-                statusLabel.setText(audioObj.getStatus());
+                startService(i);
             }
         });
 
         final Button endButton = (Button) findViewById(R.id.btnEnd);
         endButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                audioObj.close();
-                statusLabel.setText(audioObj.getStatus());
+                //stopService(new Intent(v.getContext(), LineService.class));
+                stopService(i);
             }
         });
 
@@ -52,6 +51,9 @@ public class MainActivity extends ActionBarActivity{
                micStatusLabel.setText(finalMStat);
             }
         });
+
+        //throw the start of the service in here if we want to start the service on app creation
+        //startService(i);
     }
 
 
@@ -73,7 +75,6 @@ public class MainActivity extends ActionBarActivity{
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
